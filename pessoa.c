@@ -3,9 +3,14 @@
 // cadastro de pessoa
 void cadastrarPessoa()
 {
+    //cadastro de pessoa (ainda sem arquivo)
     printf(" --- Cadastro de Pessoa --- ");
     printf("Nome: \n");
     scanf(" %s", pessoa.nome);
+    printf("Idade: \n");
+    scanf("%d", pessoa.idade);
+    printf("Sexo: \n");
+    scanf(" %c", pessoa.sexo);
     printf("Peso: \n");
     scanf("%f", pessoa.peso);
     printf("Altura: ");
