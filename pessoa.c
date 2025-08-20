@@ -1,20 +1,43 @@
 #include <pessoa.h>
 
-// cadastro de pessoa
+// cadastro de pessoa --- SEM TESTE!
 void cadastrarPessoa()
 {
-    //cadastro de pessoa (ainda sem arquivo)
-    printf(" --- Cadastro de Pessoa --- ");
-    printf("Nome: \n");
-    scanf(" %s", pessoa.nome);
-    printf("Idade: \n");
-    scanf("%d", pessoa.idade);
-    printf("Sexo: \n");
-    scanf(" %c", pessoa.sexo);
-    printf("Peso: \n");
-    scanf("%f", pessoa.peso);
-    printf("Altura: ");
-    scanf("%f", pessoa.altura);
+    // criação arquivo
+    FILE *arquivo;
+
+    // abre arquivo para a gravação(escrita)
+    arquivo = fopen("teste.dat", 'wb');
+
+    // mensagem de erro caso arquivo esteje vazio
+    if (arquivo == NULL)
+    {
+        printf("Erro ao abrir arquivo!");
+    }
+    else
+    {
+        // limpa buffer para leitura
+        fflush(stdin);
+
+        // cadastro de pessoa (com arquivo) - SEM TESTE !!! -
+        printf(" \n--- Cadastro de Pessoa ---\n ");
+        printf("Nome: \n");
+        fgets(pessoa.nome, 50, stdin); // le o nome com espaços, mas deixa \n no final
+        printf("Idade: \n");
+        scanf("%d", pessoa.idade);
+        printf("Sexo: \n");
+        scanf(" %c", pessoa.sexo);
+        printf("Peso: \n");
+        scanf("%f", pessoa.peso);
+        printf("Altura: ");
+        scanf("%f", pessoa.altura);
+
+        // armazena informações no arquivo
+        fprintf(arquivo, "%s;%d;%c;%f;%f\n", pessoa.nome, pessoa.idade, pessoa.sexo, pessoa.peso, pessoa.altura);
+    }
+    fclose(arquivo);
+    // sucesso caso cadastrado
+    printf("Dados cadastrados com sucesso!");
 
 } // cadastrarPessoa
 
