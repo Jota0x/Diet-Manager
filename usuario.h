@@ -10,12 +10,19 @@ typedef struct
     float peso;
     float altura;
 
-} Pessoa;
+} Usuario;
 
-Pessoa pessoa;
+Usuario usuario;
+// ---- usuario ---- //
 
-void cadastrarPessoa();
+void cadastrarUsuaio();
+void apresentarUsuario();
+
+// ---- usuario ---- //
+
+// ---- calculo ---- //
+
 float imcCalculo(float altura, float peso);
 float tbmCalculo(float altura, float peso, int idade, char sexo);
 
-
+// ---- calculo ---- //
