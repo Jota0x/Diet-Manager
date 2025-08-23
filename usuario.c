@@ -1,5 +1,10 @@
-#include <usuario.h>
+// bibliotecas
 #include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+
+// headers
+#include "usuario.h"
 
 // ---- usuario ---- //
 
@@ -10,27 +15,27 @@ void cadastrarUsuario()
     FILE *arquivo;
 
     // abre arquivo para a gravação(escrita)
-    arquivo = fopen("teste.txt", 'w');
+    arquivo = fopen("teste.txt", "w");
 
     // mensagem de erro caso arquivo esteje vazio
     if (arquivo == NULL)
     {
         printf("Erro ao abrir arquivo!");
-        return 1; // indica erro
-    }
+        return; // indica erro
+    } // end of
     else
     {
         // limpa buffer para leitura
         fflush(stdin); // talvez n seja preciso fgets ja faz essa função
 
-        // cadastro de pessoa (com arquivo) - SEM TESTE !!! -
-        printf(" \n--- Cadastro de Pessoa ---\n ");
+        // cadastro de pessoa (com arquivo) - SEM TESTE  -
+        printf(" \n--- Cadastro de Usuario ---\n ");
 
-        printf("Nome: \n");
-        fgets(usuario.nome, 50, stdin);                   // le o nome com espaços, mas deixa \n no final
-        usuario.nome[strcspn(usuario.nome, "\n")] = '\0'; // substitui o \n do final da string por \0 para evitar erro nas  proximas leituras
+        printf("Nome: ");
+        fgets(usuario.nome, 50, stdin); // le o nome com espaços, mas deixa \n no final
+        // usuario.nome[strcspn(usuario.nome, "\n")] = '\0'; // substitui o \n do final da string por \0 para evitar erro nas  proximas leituras
 
-        printf("Idade: \n");
+        printf(" Idade: ");
         scanf("%d", &usuario.idade);
 
         // limpa o buffer de entrada apos o scanf - evita leitura da quebra de linha
@@ -41,7 +46,7 @@ void cadastrarUsuario()
         // verifica sexo
         do
         {
-            printf("Sexo(M/F): \n");
+            printf(" Sexo(M/F): ");
             scanf(" %c", &usuario.sexo);
 
             // valida letra minuscula
@@ -55,34 +60,34 @@ void cadastrarUsuario()
 
         } while (usuario.sexo != 'M' && usuario.sexo != 'F');
 
-        printf("Peso: \n");
+        printf(" Peso: ");
         scanf("%f", &usuario.peso);
 
-        printf("Altura: ");
+        printf(" Altura: ");
         scanf("%f", &usuario.altura);
 
         // armazena informações no arquivo
         fprintf(arquivo, "%s;%d;%c;%f;%f\n", usuario.nome, usuario.idade, usuario.sexo, usuario.peso, usuario.altura);
-    }
+    } // end if
     fclose(arquivo);
     // sucesso caso cadastrado
     printf("Dados cadastrados com sucesso!");
 
 } // cadastrarUsuario
 
-// apresentação de usuario --- SEM TESTE --- não revisado
+// apresentação de usuario - SEM TESTE - não revisado
 void apresentarUsuario()
 {
     FILE *arquivo;
 
     // abre o arquivo para leitura
-    arquivo = fopen("teste.txt", 'r');
+    arquivo = fopen("teste.txt", "r");
 
     // verifica se o arquivo esta vazio
     if (arquivo == NULL)
     {
-        print("Erro ao abrir arquivo!");
-        return 1; // indica erro
+        printf("Erro ao abrir arquivo!");
+        return; // indica erro
     } // end if
     else
     {
@@ -91,14 +96,14 @@ void apresentarUsuario()
         // caso leitura bem sucedida --- apresenta os dados
         {
 
-            // menu de cadastro
+            // menu de cadastro do usuario
             printf("\n ---- Cadastro ---- \n");
 
             printf("Nome: %s\n", usuario.nome);
-            printf("Nome: %d\n", usuario.idade);
-            printf("Nome: %c\n", usuario.sexo);
-            printf("Nome: %.2f Kg\n", usuario.peso);
-            printf("Nome: %.2f cm\n", usuario.altura);
+            printf("Idade: %d\n", usuario.idade);
+            printf("Sexo: %c\n", usuario.sexo);
+            printf("Peso: %.2f Kg\n", usuario.peso);
+            printf("Altura: %.2f cm\n", usuario.altura);
             printf("Taxa metabolica basal(TBM): %f", tbmCalculo(usuario.peso, usuario.altura, usuario.idade, usuario.peso));
 
         } // end if
@@ -139,7 +144,7 @@ float tbmCalculo(float peso, float altura, int idade, char sexo)
     } // end if
     else if (sexo == 'F')
     {
-        TBM = 655, 1 + (9.563 * peso) + (1.850 * altura) - (4.676 * idade);
+        TBM = 655.1 + (9.563 * peso) + (1.850 * altura) - (4.676 * idade);
     } // end if
     else
         printf("Sexo indefinido");

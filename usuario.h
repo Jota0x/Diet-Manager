@@ -15,7 +15,7 @@ typedef struct
 Usuario usuario;
 // ---- usuario ---- //
 
-void cadastrarUsuaio();
+void cadastrarUsuario();
 void apresentarUsuario();
 
 // ---- usuario ---- //
