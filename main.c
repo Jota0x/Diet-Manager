@@ -12,7 +12,7 @@ int main()
     int opcao;
     bool cadastrado = false;
 
-    // prototipo menu
+    // prototipo menu --- teste menu --- OK
     do
     {
         printf("\n     --- MENU --- \n");
