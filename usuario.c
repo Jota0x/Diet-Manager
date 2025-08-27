@@ -22,7 +22,7 @@ void cadastrarUsuario()
     {
         printf("Erro ao abrir arquivo!");
         return; // indica erro
-    } // end of
+    } // end if
     else
     {
         // limpa buffer para leitura
@@ -68,7 +68,7 @@ void cadastrarUsuario()
 
         // armazena informações no arquivo
         fprintf(arquivo, "%s;%d;%c;%f;%f\n", usuario.nome, usuario.idade, usuario.sexo, usuario.peso, usuario.altura);
-    } // end if
+    } // end else
     fclose(arquivo);
     // sucesso caso cadastrado
     printf("Dados cadastrados com sucesso!");
