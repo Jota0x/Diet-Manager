@@ -16,3 +16,4 @@ typedef struct
 Alimento alimento;
 
 void adicionarALimento();
+void apresentarAlimento();

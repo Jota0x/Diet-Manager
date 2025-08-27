@@ -76,6 +76,7 @@ void cadastrarUsuario()
 } // cadastrarUsuario
 
 // apresentação de usuario - SEM TESTE - não revisado
+// Precisa acrescentar CHAVE DE PESQUISA
 void apresentarUsuario()
 {
     FILE *arquivo;
@@ -87,7 +88,7 @@ void apresentarUsuario()
     if (arquivo == NULL)
     {
         printf("Erro ao abrir arquivo!");
-        return; // indica erro
+        // return; // indica erro
     } // end if
     else
     {
@@ -98,7 +99,7 @@ void apresentarUsuario()
 
             // menu de cadastro do usuario
             printf("\n ---- Cadastro ---- \n");
-
+            // apresneta dados cadastrados
             printf("Nome: %s\n", usuario.nome);
             printf("Idade: %d\n", usuario.idade);
             printf("Sexo: %c\n", usuario.sexo);
@@ -112,8 +113,9 @@ void apresentarUsuario()
             printf("Erro na leitura do arquivo!");
         } // end else
 
-    } // end else if
+    } // end else
 
+    // fecha arquivo
     fclose(arquivo);
 
 } // apresentarUsuario
