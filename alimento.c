@@ -108,7 +108,7 @@ void buscaALimento(char chave[], Alimento alimento[])
     else
     {
         // le chave de busca
-        scanf("%s", chave[50]);
+        scanf("%s", chave[50]); 
 
         // busca a palavra digitada
         for (int i = 0; i < totalAtual; i++)

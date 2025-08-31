@@ -75,7 +75,7 @@ void cadastrarUsuario()
 
 } // cadastrarUsuario
 
-// apresentação de usuario - SEM TESTE - não revisado
+// apresentação de usuario - SEM TESTE - não revisado - NAO FUNCIONA COMO DEVERIA !!
 // Precisa acrescentar CHAVE DE PESQUISA
 void apresentarUsuario()
 {
@@ -124,7 +124,10 @@ void apresentarUsuario()
 
 // ---- calculo ---- //
 
+
+
 // calculo de IMC
+//calculo nao esta como o esperado - nao está mesmo 
 float imcCalculo(float altura, float peso)
 {
     float IMC;
@@ -135,7 +138,7 @@ float imcCalculo(float altura, float peso)
 
 } // imcCalcular
 
-// calculo de TBM
+// calculo de TBM - tbm n fuciona como esperado
 float tbmCalculo(float peso, float altura, int idade, char sexo)
 {
     float TBM;
