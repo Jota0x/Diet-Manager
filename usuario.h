@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//dados usuario
 typedef struct
 {
     char nome[50];
@@ -21,8 +22,11 @@ void apresentarUsuario();
 // ---- usuario ---- //
 
 // ---- calculo ---- //
+// --- IMC --- //
+float calculoIMC(Usuario usuario);
+void classificacaoIMC();
 
-float imcCalculo(float altura, float peso);
-float tbmCalculo(float altura, float peso, int idade, char sexo);
+// --- TMB --- //
+float calculoTBM(Usuario usuario);
 
 // ---- calculo ---- //

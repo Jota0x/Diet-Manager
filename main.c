@@ -7,8 +7,6 @@
 #include "usuario.h"
 #include "alimento.h"
 
-
-
 int main()
 {
     int opcao;
@@ -30,8 +28,7 @@ int main()
         {
         case 1:
             cadastrarUsuario();
-            imcCalculo(usuario.altura, usuario.peso);
-            tbmCalculo(usuario.altura, usuario.peso, usuario.idade, usuario.sexo);
+
             break;
         case 2:
             apresentarUsuario();

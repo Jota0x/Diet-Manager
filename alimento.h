@@ -1,19 +1,23 @@
-//bibliotecas básicas
+// bibliotecas básicas
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 
-//modelo base para cadastro de alimento
+// dados alimento
 typedef struct
 {
     char nome[50];
-    float porcao; 
+    float porcao;
     float carboidrato;
     float proteina;
-    float gordura;  
+    float gordura;
 
-}Alimento;
+} Alimento;
 
 Alimento alimento;
 
+// --- gravação e leitura ---
 void adicionarALimento();
 void apresentarAlimento();
+
+// --- calculo ---
+void totalCaloria(Alimento alimento);

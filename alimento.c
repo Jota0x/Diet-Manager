@@ -115,14 +115,29 @@ void buscaALimento(char chave[], Alimento alimento[])
         {
             // verifica alimento com nome pesquisado
             if (chave == alimento[i].nome)
-            {   
-                //imprime alimento, caso ache 
+            {
+                // imprime alimento, caso ache
                 printf("%s", alimento[i].nome);
             } // end if
             else
                 printf("Nunhum item encontrado");
         } // end for
     } // end else
-}
+} // buscarAlimento
+
+// total de calorias --- Verificar conta
+void totalCaloria(Alimento alimento)
+{
+    //calculo --- Verificar 
+    float totalCalorias = ((alimento.carboidrato * 4) + (alimento.proteina * 4) + (alimento.gordura * 9));
+
+    //imprime informação
+    printf("\nTotal de calorias(aproximado): %.2f gramas",totalCalorias);
+}// totalCaloria 
+
+// gasto diario -
+// gasto mensal - fazer o calculo com base nos ultimso 30 registros
+// salvar media semanal e gasto diario
+// salvar media mensal e gasto semanal
 
 // --- Alimento --- //

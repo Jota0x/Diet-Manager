@@ -39,9 +39,9 @@ void cadastrarUsuario()
         scanf("%d", &usuario.idade);
 
         // limpa o buffer de entrada apos o scanf - evita leitura da quebra de linha
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF)
-            ;
+        // int c;
+        // while ((c = getchar()) != '\n' && c != EOF)
+        //   ;
 
         // verifica sexo
         do
@@ -100,12 +100,16 @@ void apresentarUsuario()
             // menu de cadastro do usuario
             printf("\n ---- Cadastro ---- \n");
             // apresneta dados cadastrados
-            printf("Nome: %s\n", usuario.nome);
-            printf("Idade: %d\n", usuario.idade);
-            printf("Sexo: %c\n", usuario.sexo);
-            printf("Peso: %.2f Kg\n", usuario.peso);
-            printf("Altura: %.2f cm\n", usuario.altura);
-            printf("Taxa metabolica basal(TBM): %f", tbmCalculo(usuario.peso, usuario.altura, usuario.idade, usuario.peso));
+            printf("\nNome: %s\n", usuario.nome);
+            printf("\nIdade: %d\n", usuario.idade);
+            printf("\nSexo: %c\n", usuario.sexo);
+            printf("\nPeso: %.2f Kg\n", usuario.peso);
+            printf("\nAltura: %.2f cm\n", usuario.altura);
+            // taxas não salvas em arquivo --- verificar depois ---
+            //verificar parametros
+            printf("\nTaxa metabolica basal(TBM): %f", tbmCalculo(usuario));
+            printf("\nIMC: %f", calculoIMC(usuario));
+            classificacaoIMC();
 
         } // end if
         else
@@ -125,28 +129,66 @@ void apresentarUsuario()
 // ---- calculo ---- //
 
 // calculo de IMC
-float imcCalculo(float altura, float peso)
+float calculoIMC(Usuario usuario)
 {
     float IMC;
-
-    IMC = peso / (altura * altura);
+    char classificacao;
+    // calculo IMC
+    IMC = usuario.peso / (usuario.altura * usuario.altura);
 
     return IMC;
 
 } // imcCalcular
 
+// classifica IMC
+void classificacaoIMC()
+{
+
+    // trata classificação do IMC
+    if (calculoIMC(usuario) < 18.5)
+    {
+        printf("\nBaixo Peso");
+    }
+    else if (calculoIMC(usuario) >= 18.5 && calculoIMC(usuario) < 24.9)
+    {
+        printf("\nPeso Normal");
+    }
+    else if (calculoIMC(usuario) >= 25 && calculoIMC(usuario) <= 29.9)
+    {
+        printf("\nSobrepeso");
+    }
+    else if (calculoIMC(usuario) >= 30 && calculoIMC(usuario) <= 34.9)
+    {
+        printf("\nObesidade grau I");
+    }
+    else if (calculoIMC(usuario) >= 35 && calculoIMC(usuario) <= 39.9)
+    {
+        printf("\nObesidade grau II");
+    }
+    else if (calculoIMC(usuario) > 40)
+    {
+        printf("\nObesidade grau III");
+    }
+    else
+        // caso de erro no calculo
+        printf("\nErro na calculo do IMC");
+
+} // classifica IMC
+
+// --- TBM ---
+
 // calculo de TBM
-float tbmCalculo(float peso, float altura, int idade, char sexo)
+float calculoTBM(Usuario usuario)
 {
     float TBM;
 
-    if (sexo == 'M')
+    if (usuario.sexo == 'M')
     {
-        TBM = 66.47 + (13.75 * peso) + (5.003 * altura) - (6.755 * idade);
+        TBM = 66.47 + (13.75 * usuario.peso) + (5.003 * usuario.altura) - (6.755 * usuario.idade);
     } // end if
-    else if (sexo == 'F')
+    else if (usuario.sexo == 'F')
     {
-        TBM = 655.1 + (9.563 * peso) + (1.850 * altura) - (4.676 * idade);
+        TBM = 655.1 + (9.563 * usuario.peso) + (1.850 * usuario.altura) - (4.676 * usuario.idade);
     } // end if
     else
         printf("Sexo indefinido");
