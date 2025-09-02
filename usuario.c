@@ -75,7 +75,7 @@ void cadastrarUsuario()
 
 } // cadastrarUsuario
 
-// apresentação de usuario - SEM TESTE - não revisado
+// apresentação de usuario - SEM TESTE - não revisado - NAO FUNCIONA COMO DEVERIA !!
 // Precisa acrescentar CHAVE DE PESQUISA
 void apresentarUsuario()
 {
@@ -128,8 +128,15 @@ void apresentarUsuario()
 
 // ---- calculo ---- //
 
+
+
 // calculo de IMC
+<<<<<<< HEAD
 float calculoIMC(Usuario usuario)
+=======
+//calculo nao esta como o esperado - nao está mesmo 
+float imcCalculo(float altura, float peso)
+>>>>>>> bcfa49b67169577e36026cf07a46046ab4a7a33d
 {
     float IMC;
     char classificacao;
@@ -140,6 +147,7 @@ float calculoIMC(Usuario usuario)
 
 } // imcCalcular
 
+<<<<<<< HEAD
 // classifica IMC
 void classificacaoIMC()
 {
@@ -179,6 +187,10 @@ void classificacaoIMC()
 
 // calculo de TBM
 float calculoTBM(Usuario usuario)
+=======
+// calculo de TBM - tbm n fuciona como esperado
+float tbmCalculo(float peso, float altura, int idade, char sexo)
+>>>>>>> bcfa49b67169577e36026cf07a46046ab4a7a33d
 {
     float TBM;
 
