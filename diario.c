@@ -43,3 +43,5 @@ void salvaData(Diario diario)
         scanf("%d", diario.ano);
     }
 } // salva Data
+
+//criação de funções semanal e mensal para diário
