@@ -75,7 +75,7 @@ void cadastrarUsuario()
 
 } // cadastrarUsuario
 
-// apresentação de usuario - SEM TESTE - não revisado - NAO FUNCIONA COMO DEVERIA !!
+// Nao FUNCIONA 
 // Precisa acrescentar CHAVE DE PESQUISA
 void apresentarUsuario()
 {
