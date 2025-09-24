@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <windows.h>
+#include <stdbool.h>
 #include "usuario.h"
 
 int main()
@@ -12,6 +13,8 @@ int main()
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
     int opcao;
+    // variavel de controle de usuario
+    bool usuario = false;
 
     // menu
     do
@@ -29,8 +32,20 @@ int main()
         switch (opcao)
         {
         case 1:
-            cadastroUsuario();
+            // trata usuario
+            if (usuario == FALSE)
+            {
+                cadastroUsuario();
+                usuario == true;
+            }
+            else if (usuario == TRUE)
+            {
+                apresentarUsuario();
+            }
+            else
+                printf("ERRO USUARIO");
             break;
+
         case 2:
             break;
         case 3:

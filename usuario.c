@@ -1,4 +1,6 @@
 #include "usuario.h"
+#include<string.h>
+
 
 void cadastroUsuario()
 {
@@ -17,7 +19,9 @@ void cadastroUsuario()
         // menu base cadastro
         printf("\n ---MENU DE CADASTRO ---\n");
         printf("\nNome: ");
-        scanf("%s", &usuario.nome);
+        fgets(usuario.nome, 50, stdin);
+        //Remove quebra de linha
+        usuario.nome[strcspn(usuario.nome, "\n")] = 0;
         do
         {
             printf("\nSexo: ");
@@ -60,7 +64,7 @@ void apresentarUsuario()
     }
     else
     {
-        fscanf(arquivo,)
+        fscanf(arquivo, "%[^;],%c,%d,%f,%f", usuario.nome, usuario.sexo, usuario.idade, usuario.peso, usuario.peso); // %[^;] lê até o ;
         printf("\n --- USUARIO ---\n");
         printf("Nome: %s", &usuario.nome);
         printf("\nSexo: %c", usuario.sexo);
