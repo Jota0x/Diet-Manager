@@ -1,7 +1,7 @@
 #include "usuario.h"
 #include<string.h>
 
-
+/*  arrumar essa merda 
 void cadastroUsuario()
 {
     FILE *arquivo;
@@ -49,6 +49,8 @@ void cadastroUsuario()
     fclose(arquivo);
 
 } // end cadastroUsuario
+*/
+
 
 void apresentarUsuario()
 {
