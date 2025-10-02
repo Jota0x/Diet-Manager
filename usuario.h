@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-//dados base
+// dados base
 typedef struct
 {
     char nome[50];
@@ -11,7 +13,9 @@ typedef struct
     float altura;
 } Usuario;
 
-Usuario usuario;
+Usuario *usuario;
 
-void cadastroUsuario();
-void apresentarUsuario();
+void cadastroUsuario(Usuario *usuario);
+void apresentarUsuario(Usuario *usuario);
+float TBMcalculo(Usuario *usuario);
+float IMCcalculo(Usuario *usuario);
