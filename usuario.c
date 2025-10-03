@@ -1,6 +1,5 @@
 #include "usuario.h"
 
-
 void cadastroUsuario(Usuario *usuario)
 {
     FILE *arquivo;
@@ -90,6 +89,8 @@ void apresentarUsuario(Usuario *usuario)
         printf("Idade: %d", usuario->idade);
         printf("Peso: %f", usuario->peso);
         printf("Altura: %f", usuario->altura);
+        printf("TBM: %.2f", TBMcalculo(usuario));
+        printf("IMC: %.2f", IMCcalculo(usuario));
     } // end else
 
 } // end apresentarUsuario
