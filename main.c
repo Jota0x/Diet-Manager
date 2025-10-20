@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include "usuario.h"
 
+//VEREIFICAR PARAMETROS
 int main()
 {
     SetConsoleOutputCP(65001);
