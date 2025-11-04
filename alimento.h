@@ -4,7 +4,6 @@
 #define MAX_ALIMENTO 500
 
 int totalAlimentos = 0;
-
 typedef struct
 {
     char nome[100];
@@ -17,3 +16,4 @@ typedef struct
 Alimento alimento;
 
 void cadastroAlimento(Alimento *alimento);
+void listaAlimento(Alimento *alimento);
