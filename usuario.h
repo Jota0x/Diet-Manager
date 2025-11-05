@@ -15,6 +15,7 @@ typedef struct
 Usuario usuario;
 
 void cadastroUsuario(Usuario *usuario);
-void apresentarUsuario(Usuario *usuario);    
+int carregarUsuario(Usuario *usuario);
+void apresentarUsuario(const Usuario *usuario);
 float calculoTMB(Usuario *usuario);
 float calculoIMC(Usuario *usuario);

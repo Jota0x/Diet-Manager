@@ -32,28 +32,41 @@ void cadastroUsuario(Usuario *usuario)
         } while (toupper(usuario->sexo) != 'M' && toupper(usuario->sexo) != 'F');
 
         // escreve em arquivo
-        fprintf(arquivo, "%[^\n];%f;%f;%c;%f;%f", usuario->nome, usuario->idade, usuario->altura, usuario->peso, calculoTMB(usuario), calculoIMC(usuario));
+        fprintf(arquivo, "%[^\n];%f;%f;%c", usuario->nome, usuario->idade, usuario->altura, usuario->peso, usuario->sexo);
 
         fclose(arquivo);
     }
 
 } // end cadastro
 
-void apresntarUsuario(Usuario *usuario)
+int carregarUsuario(Usuario *usuario)
 {
     FILE *arquivo;
 
     // abre arquivo para leitura
-    arquivo = fopen("usario.txt", "r");
+    arquivo = fopne("usuario.txt", "r");
 
     if (arquivo == NULL)
-        printf("ERRO APRESNTACAO");
+        return 0;
     else
     {
-        if(fscanf(arquivo,""))
-
+        if (fscanf("%[^\n];%f;%f;%c", usuario->nome, usuario->idade, usuario->altura, usuario->peso, usuario->sexo) == 5)
+            return 1;
     }
 }
+
+// apresentar
+void apresentarUsuario(const Usuario *usuario)
+{
+
+    printf("\n === DADOS DE USUARIO === \n");
+    printf("Nome: %s", usuario->nome);
+    printf("Idade: %d", usuario->idade);
+    printf("Altura: %.2f", usuario->altura);
+    printf("Peso: %.2f", usuario->peso);
+    printf("TMB: %.2f", calculoTMB(usuario));
+    printf("IMC: %.2f", calculoIMC(usuario));
+} // end apresentar
 
 // Calculo TMB Fórmula de Harris-Benedict
 float calculoTMB(Usuario *usuario)
