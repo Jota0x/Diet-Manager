@@ -16,4 +16,4 @@ typedef struct
 Alimento alimento;
 
 void cadastroAlimento(Alimento *alimento);
-void listaAlimento(Alimento *alimento);
+void listaAlimento(Alimento *alimento,int total);
