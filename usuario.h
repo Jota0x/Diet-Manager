@@ -17,5 +17,5 @@ Usuario usuario;
 void cadastroUsuario(Usuario *usuario);
 int carregarUsuario(Usuario *usuario);
 void apresentarUsuario(const Usuario *usuario);
-float calculoTMB(Usuario *usuario);
-float calculoIMC(Usuario *usuario);
+float calculoTMB(const Usuario *usuario);
+float calculoIMC(const Usuario *usuario);

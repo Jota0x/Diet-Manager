@@ -48,6 +48,7 @@ void listaAlimento(Alimento *alimento, int total)
 
         for (int i = 0; i < total; i++)
         {
+            printf("=================================================================");
             printf("Alimento %d", i + 1);
             fscanf(arquivo, "%[^;];%f;%f;%f", alimento->nome, alimento->carboidrato, alimento->proteina, alimento->gordura);
             printf("%s", alimento->nome);
@@ -55,7 +56,6 @@ void listaAlimento(Alimento *alimento, int total)
             printf("Proteina: %.2f", alimento->proteina);
             printf("Gordura: %.2f", alimento->gordura);
         }
-        
     }
 
 } // lista
