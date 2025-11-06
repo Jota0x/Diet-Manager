@@ -1,9 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-#define MAX_ALIMENTO 500
-
-int totalAlimentos = 0;
 typedef struct
 {
     char nome[100];
@@ -15,5 +11,6 @@ typedef struct
 
 Alimento alimento;
 
-void cadastroAlimento(Alimento *alimento);
-void listaAlimento(Alimento *alimento,int total);
+void cadastroAlimento(Alimento *alimento, int *total);
+int carregarAlimento(Alimento *alimento, int max);
+void listarAlimento(const Alimento *alimento, int total);
