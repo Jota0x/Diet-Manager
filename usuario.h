@@ -12,8 +12,6 @@ typedef struct
 
 } Usuario;
 
-Usuario usuario;
-
 void cadastroUsuario(Usuario *usuario);
 int carregarUsuario(Usuario *usuario);
 void apresentarUsuario(const Usuario *usuario);

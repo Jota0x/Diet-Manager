@@ -45,10 +45,10 @@ int main()
             apresentarUsuario(&usuario);
             break;
         case 2:
-            cadastroAlimento(listaAlimento, &totalAlimentos);
+            cadastroAlimento(&listaAlimento[totalAlimentos], &totalAlimentos);
             break;
         case 3:
-            listarAlimento(&listaAlimento[totalAlimentos], totalAlimentos);
+            listarAlimento(listaAlimento, totalAlimentos);
             break;
         case 0:
             printf("Saindo...");

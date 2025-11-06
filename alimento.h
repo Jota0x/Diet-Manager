@@ -9,8 +9,6 @@ typedef struct
 
 } Alimento;
 
-Alimento alimento;
-
 void cadastroAlimento(Alimento *alimento, int *total);
 int carregarAlimento(Alimento *alimento, int max);
 void listarAlimento(const Alimento *alimento, int total);
