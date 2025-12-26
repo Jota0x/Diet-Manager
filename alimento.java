@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -6,21 +7,21 @@ import java.io.PrintWriter;
 class Alimento {
 
     private String nome;
-    private float carboidarato;
-    private float proteina;
-    private float gordura;
+    private double carboidrato;
+    private double proteina;
+    private double gordura;
 
     // construtor
     public Alimento() {
         this.nome = "";
-        carboidarato = 0;
+        carboidrato = 0;
         proteina = 0;
         gordura = 0;
     };
 
     public Alimento(String n, float c, float p, float g) {
         nome = n;
-        carboidarato = c;
+        carboidrato = c;
         proteina = p;
         gordura = g;
     }
@@ -30,15 +31,15 @@ class Alimento {
         nome = n;
     }
 
-    public void setCarboidrato(float c) {
-        carboidarato = c;
+    public void setCarboidrato(double c) {
+        carboidrato = c;
     }
 
-    public void setProteina(float p) {
+    public void setProteina(double p) {
         proteina = p;
     }
 
-    public void setGordura(float g) {
+    public void setGordura(double g) {
         gordura = g;
     }
 
@@ -47,36 +48,35 @@ class Alimento {
         return nome;
     }
 
-    public float getCarboidrato() {
-        return carboidarato;
+    public double getCarboidrato() {
+        return carboidrato;
     }
 
-    public float getProteina() {
+    public double getProteina() {
         return proteina;
     }
 
-    public float getGordura() {
+    public double getGordura() {
         return gordura;
     }
 
-    // Método de cadastro
-    public void cadastroALimento(Alimento alimento) {
+    public void salvar() {
 
-        // abre arquivo, ou cria caso n exista
-        try (FileWriter fw = new FileWriter("ALimento.txt", true); PrintWriter pw = new PrintWriter(fw)) {
+        try (FileWriter fw = new FileWriter("Alimento.txt", true); PrintWriter pw = new PrintWriter(fw)) {
 
-            // escreve em arquivo
-            pw.println(alimento.getNome() + ";" + alimento.getCarboidrato() + ";" + alimento.getProteina() + ";"
-                    + alimento.getGordura());
+            pw.println(nome + ";" + carboidrato + ";" + proteina + ";" + gordura);
 
         } catch (IOException e) {
-            System.out.println("Erro no arquivo!");
+            System.out.println("Erro no arquivo: " + e.getMessage());
         }
-    }// end cadastroAlimento
 
-    public void listarAlimento(Alimento alimento, int total) {
+    }
 
+    public void imprimir() {
 
+        System.out
+                .println("Alimento: " + nome + " Carboidrato: " + carboidrato + " Proteina: " + proteina + " Gordura: "
+                        + gordura);
 
     }
 
