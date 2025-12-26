@@ -19,7 +19,7 @@ class Alimento {
         gordura = 0;
     };
 
-    public Alimento(String n, float c, float p, float g) {
+    public Alimento(String n, double c, double p, double g) {
         nome = n;
         carboidrato = c;
         proteina = p;
